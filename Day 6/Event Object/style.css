@@ -1,0 +1,17 @@
+.div {
+position: relative;
+width: fit-content;
+}
+.inputField {
+    
+    padding: 10px 20px;
+}
+i {
+    position: absolute;
+    right: 2px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+#icon:hover{
+    cursor: pointer;
+}
