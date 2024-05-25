@@ -8,9 +8,18 @@ document.addEventListener('keydown', function(event) {
         message += ' Ctrl';
         alert(message);
     }
-    if (event.shiftKey) {
-        message += ' Shift';
+    
+    // if (event.shiftKey) {
+    //     message += ' Shift';
+    //     alert(message);
+    // }
+
+    if (event.shiftKey && event.key !== 'Shift') {
+        message = 'Shift + ' + event.key;
         alert(message);
     }
+    
 
 });
+
+// shift + key
