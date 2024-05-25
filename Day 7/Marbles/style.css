@@ -1,0 +1,9 @@
+.marbles-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+.marble {
+    width: 100px;
+    height: 100px;
+}
