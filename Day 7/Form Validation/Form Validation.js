@@ -8,9 +8,9 @@ var resetButton = document.querySelector('.resetButton');
 
 var tBody = document.querySelector('#tBody')
 
-const nameRegex = /^[A-Za-z\s]+$/;
-const ageRegex = /^(?:1[01][0-9]|120|[1-9]?[0-9])$/;
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+var nameRegex = /^[A-Za-z\s]+$/;
+var ageRegex = /^(?:1[01][0-9]|120|[1-9]?[0-9])$/;
+var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 resetButton.addEventListener('click' , function(){
     document.querySelector(".name-span").style.display = 'none';
