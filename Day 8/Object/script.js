@@ -12,4 +12,4 @@ var rectangle = {
     }
 };
 rectangle.displayinfo()
-/
+//
