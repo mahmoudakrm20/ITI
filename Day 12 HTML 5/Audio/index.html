@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 400px; width: 600px; background-color: antiquewhite; margin: auto;">
+        <div style=" display:flex ;flex-direction: row; justify-content: space-around;">
+            <div style="height: 200px; width: 200px;">
+                <img id="audioImage" style="max-width: 99%;" height="100%" src="./Photos/1.jpg" alt="">
+            </div>
+            <div style="width: 50%; margin-top: 50px;">
+                <audio  autoplay loop>
+                    <source src="./Audio/1.mp3"/>
+                </audio>
+                <button style="margin-top: 10px;" id="play"><i class="fa-solid fa-circle-play"></i></button>
+                <button id="pause"><i class="fa-solid fa-circle-pause"></i></button>
+                <button id="stop"><i class="fa-solid fa-circle-stop"></i></button>
+                <br>
+                <label>Volume:</label>
+                <input type="range" min="0" max="1" step=".1" value=".5" id="volume"/>
+                <br>
+                <label>Time:</label>
+                <input type="range" min="0" max="" value="0" id="time" style="margin-left: 18px;"/>
+            </div>
+        </div>
+        <div>
+        <div style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid gray; text-align: center; cursor: pointer;" 
+        class="row">ابطال الديجيتال</div>
+        <div style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid gray; text-align: center; cursor: pointer;" 
+        class="row">الحديقة السرية</div>
+        <div style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid gray; text-align: center; cursor: pointer;" 
+        class="row">انت الامان</div>
+        <div style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid gray; text-align: center; cursor: pointer;" 
+        class="row">عهد الاصدقاء</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

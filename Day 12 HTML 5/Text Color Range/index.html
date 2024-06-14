@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div style="display: flex ; flex-direction: column; width: 300px; margin: auto;">
+        <h2 style="color: red;">Red</h2>
+        <input type="range" min="0" max="255" step ="1"  id="red"/>
+        <h2 style="color: green;">Green</h2>
+        <input type="range" min="0" max="255" step ="1"  id="green"/>
+        <h2 style="color: blue;">Blue</h2>
+        <input type="range" min="0" max="255" step ="1"  id="blue"/>
+        <h1 id="colorchanged" style="margin-top: 100px;">Change the 3 colors above and observe the change</h1>
+    </div>
+
+    <script>
+    var redRange = document.getElementById('red');
+    var greenRange = document.getElementById('green');
+    var blueRange = document.getElementById('blue');
+    var h1color = document.getElementById('colorchanged');
+    function updateColor() {
+        var redValue = redRange.value;
+        var greenValue = greenRange.value;
+        var blueValue = blueRange.value;
+        console.log(this.value)
+        h1color.style.color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+    }
+    redRange.addEventListener('input', updateColor);
+    greenRange.addEventListener('input', updateColor);
+    blueRange.addEventListener('input', updateColor);
+    </script>
+</body>
+</html>

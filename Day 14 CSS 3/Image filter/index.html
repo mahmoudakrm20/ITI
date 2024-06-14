@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.background{
+        width: 650px;
+        height: 450px;
+        background-repeat: no-repeat;
+        background-image: url(images/thankful-businessman-with-open-arms-field_254268-363.jpg),url(images/bird.avif),url(images/sun.avif);
+        background-blend-mode: multiply;
+    }
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #4291cd;
+    color: white;
+    cursor: pointer;
+}
+</style>
+<body>
+<div class="background">
+</div>
+<div class="buttons">
+    <button id="saturateBtn">Saturate</button>
+    <button id="opacityBtn">Opacity</button>
+    <button id="invertBtn">Invert Color</button>
+    <button id="sepiaBtn">Sepia</button>
+    <button id="grayscaleBtn">Grayscale</button>
+    <button id="defaultBtn">Default</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

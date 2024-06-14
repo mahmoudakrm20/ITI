@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" placeholder="enter your user name" 
+        pattern="[a-zA-Z]{2,}"  
+        title="please enter a name " name="Name" autocomplete="off" required/><br><br>
+        <label for="username">Password:</label>
+        <input type="password" name="password" pattern=".{6,}" title="please enter more than 6 letters or numbers" required ><br><br>
+        <input type="checkbox" id="rememberMe"> Remember Me<br><br>
+        <input type="submit">
+    </form>
+    <script>
+        var rememberMe = document.getElementById('rememberMe');
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            if (rememberMe.checked){
+                event.preventDefault();  
+    
+                var username = document.querySelector('input[name="Name"]').value;
+                var password = document.querySelector('input[name="password"]').value;
+    
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+    
+                alert('Username and password saved in local storage');
+            }
+        });
+    </script>
+</body>
+</html>

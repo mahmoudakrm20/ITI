@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300');
+
+.card {
+    width: 300px;
+    height: 450px;
+    background-color: white;
+    border: 3px solid red;
+    border-radius: 20px;
+   position: relative;
+  }
+  #heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+  }
+  #heart:before,
+  #heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: black;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(136deg);
+    transform-origin: 0 100%;
+  }
+  #heart:after {
+    left: 0;
+    transform: rotate(227deg);
+    transform-origin: 100% 100%;
+  }
+  #triangle {
+    width: 0;
+    height: 0;
+    transform: scale(50%) ;
+    margin: auto;
+    margin-top: 20px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgb(0, 0, 0);
+  }
+
+.card {
+    
+}
+  .letter {
+    font-family: 'Ampersand', Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .letter2 {
+    font-family:  'Ampersand', Georgia, Times, 'Times New Roman', serif;    font-size: 50px;
+    
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+  }

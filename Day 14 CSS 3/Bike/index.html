@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .bike-road {
+        height: 500px;
+        width: 100%;
+        background-image: url(images/istockphoto-1161948652-612x612.jpg);
+        background-size: contain;
+       
+    }
+    @keyframes bikeAnimation {
+    0% {
+        left: 0px;
+        transform: rotate(0deg) ;
+    }
+    33% {
+        left: 89%;
+        transform: rotate(0deg) ;
+    }
+    66% {
+        left: 89%;
+        transform: rotate(0deg) scaleX(-1);
+    }
+    100% {
+        left: 0px;
+        transform: rotate(0deg) scaleX(-1);
+    }
+
+
+    }
+    img {
+        width: 200px;
+        top: 270px;
+        left: -20px;
+        position: absolute;
+        animation: bikeAnimation 7s linear infinite;
+    }
+    .lefWerga3{
+        position: absolute;
+        left: 47%;
+        top: 2%;
+        width: 100px;
+        height: 100px;
+        background-color: cornflowerblue;
+        border-radius: 50%;
+        animation: circleanimation 3s linear infinite;  
+    }
+    @keyframes circleanimation {
+         0% {
+        transform:  rotate(30deg);
+    }
+    50% {
+        transform:  rotate(-30deg);
+    }
+    100% {
+        transform:  rotate(30deg);
+    }
+
+    }
+</style>
+<body>
+    <div class="bike-road">
+        <div class="lefWerga3">
+            <p style="position: absolute; top: 40%; right: 10%;">لف و ارجع تاني</p>
+    </div>
+    <img src="images/—Pngtree—cartoon characters ride bicycles_4141664.png" alt="">
+</div>
+        
+</body>
+</html>

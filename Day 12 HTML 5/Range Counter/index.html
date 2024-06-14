@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="display: flex ; flex-direction: column; width: 300px; margin: auto;">
+        <input style="width: 40px; margin: auto;" type="text" value="0" name="" id="num">
+        <input type="range" min="0" max="10" step ="1"  id="range"/>
+        <h2 style="margin: auto;" id="result">0</h2>
+    </div>
+
+
+    <script>
+    var countNum = document.getElementById('num');
+    var range = document.getElementById('range');
+    var result = document.getElementById('result');
+    
+    function updateCounter() {
+        var countNumValue = countNum.value;
+        var rangeValue = range.value;
+
+        resultValue = parseInt(rangeValue)  + parseInt(countNumValue)  ;
+        result.innerText= resultValue
+    }
+    range.addEventListener('input', updateCounter);
+    </script>
+</body>
+</html>
