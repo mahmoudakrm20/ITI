@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <script>
+        let fruits = ["apple", "strawberry", "banana", "orange","mango"];
+            let everyFurit = fruits.every((fruit) => typeof fruit === "string");
+            console.log(` Is every element in the given array a string ? Answer : ${everyFurit}`)
+
+            let someFurits = fruits.some((fruit) =>  fruit[0] === "a");
+            console.log(`Do some of array elements starts with "a" ? Answer :  ${someFurits}`)
+
+            let filteredFruits = fruits.filter((fruit) => fruit[0] === 'b' || fruit[0] ==='s' )
+            console.log(filteredFruits)
+
+            let likedFruits = fruits.map((fruit) => `I like ${fruit}`);
+            console.log(likedFruits); 
+
+            likedFruits.forEach((fruit) => console.log(fruit));
+    </script>
+</body>
+</html>

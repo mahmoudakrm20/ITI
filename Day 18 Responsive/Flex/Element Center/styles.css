@@ -1,0 +1,21 @@
+.flex-container {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    border: 2px solid black;
+    
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    height: 100px;
+    width: 200px;
+    align-items: start;
+    justify-content: start;
+    border: 2px solid orange;
+}
+.content h2 {
+    margin: 0;
+}

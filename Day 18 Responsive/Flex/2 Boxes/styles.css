@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.flex-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    width: 700px;
+    border: 2px solid black;
+}
+.content p{
+    text-align: center;
+    padding: 10px;
+}
+.footer {
+    border-top: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    background-color: #ccc;
+}
