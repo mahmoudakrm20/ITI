@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let obj = {
+        name : "mahmoud",
+        address : "alexandria sedi beshr",
+        age : 26
+    }
+    let handler = {
+        get (target,prop) {
+                if (!target.hasOwnProperty(prop)) {
+                    throw prop + " is not found";
+                } 
+                return target[prop];
+        } , 
+        set (target,prop , value){
+                if (prop=="name"){
+                    if (typeof value !== 'string' || value.length !== 7){
+                        throw new Error('The name property must be a string of exactly 7 characters.')
+                    }}
+                if (prop=="address"){
+                    if (typeof value !== 'string'){
+                        throw new Error('The address property must be a string.');
+                    }
+                }
+                if (prop=="age"){
+                    if (typeof value !== 'number' || value < 25 || value > 60){
+                        throw new Error('The age property must be a number between 25 and 60.');
+                    }
+                }
+                target[prop] = value;
+            }}
+    
+    let objProxy = new Proxy (obj,handler)
+
+    objProxy.age = 27;
+    console.log(objProxy.age);
+    objProxy.address="ismailia elsheikh zayed"
+    console.log(objProxy.address);
+    objProxy.name = "hamadaa"
+    console.log(objProxy.name);
+</script>
+</body>
+</html>

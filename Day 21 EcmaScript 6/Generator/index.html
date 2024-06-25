@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function* fibonacciElements(count) {
+  let prev = 1;
+  let current = 1;
+  for (let i = 0; i < count; i++) {
+    yield prev;
+    let next = prev + current;
+    prev = current;
+    current = next;
+  }
+}
+
+
+console.log("Fibonacci elements");
+for (let number of fibonacciElements(10)) {
+  console.log(number);
+}
+
+function* fibonacciMax(max) {
+  let prev = 0;
+  let current = 1;
+
+  for (let i = 0; prev <= max;i++) {
+    yield prev;
+    let next = prev + current;
+    prev = current;
+    current = next;
+  }
+}
+
+console.log("Fibonacci max value");
+for (let number of fibonacciMax(100)) {
+  console.log(number);
+}
+
+const fibonacciElementsGen = fibonacciElements(10);
+
+// let result1 = fibonacciElementsGen.next();
+// console.log(result1.value); // 1
+// let result2 = fibonacciElementsGen.next();
+// console.log(result2.value); // 1
+// let result3 = fibonacciElementsGen.next();
+// console.log(result3.value); // 1
+
+</script>
+</body>
+</html>
