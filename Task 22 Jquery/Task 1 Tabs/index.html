@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .tabs {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .tabs li {
+            padding: 10px;
+            cursor: pointer;
+            background: #f0f0f0;
+            margin-right: 5px;
+        }
+
+        .tabs li.active {
+            background: #ccc;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.block {
+            display: block;
+            padding: 10px;
+            background: #f0f0f0;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="tabs">
+        <li class="active">Tab One</li>
+        <li>Tab Two</li>
+        <li>Tab Three</li>
+        <li>Tab Four</li>
+    </ul>
+
+    <div class="tab-content block">
+        <p>Content One</p>
+    </div>
+    <div class="tab-content">
+        <p>Content Two</p>
+    </div>
+    <div class="tab-content">
+        <p>Content Three</p>
+    </div>
+    <div class="tab-content">
+        <p>Content Four</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

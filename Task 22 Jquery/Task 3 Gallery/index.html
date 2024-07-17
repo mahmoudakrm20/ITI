@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            margin: auto;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px;
+        }
+        img {
+            width: 400px;
+            overflow: hidden;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .slider {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(19, 5, 5, 0.6); 
+            justify-content: center;
+            align-items: center;
+        }
+        .slider img {
+            width: 50%;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <button class="nav-button prev">&lt;</button>
+        <img src="" alt="">
+        <button class="nav-button next">&gt;</button>
+    </div>
+    <div>
+        <div class="container">
+            <img src="Images/01.jpg" alt="">
+            <img src="Images/02.jpg" alt="">
+            <img src="Images/03.jpg" alt="">
+            <img src="Images/04.jpg" alt="">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

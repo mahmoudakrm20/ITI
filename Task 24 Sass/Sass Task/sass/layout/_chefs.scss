@@ -1,0 +1,43 @@
+.chefs {
+  margin-bottom: 50px;
+}
+
+.chefs-p {
+  @include font($titles-color, 18px, "Open sans", 400);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.chefs-flex {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.chefs-flex-chef {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  gap: 15px;
+  padding: 30px;
+  background-color: $gray-background;
+  text-align: center;
+}
+
+.chefs-flex-chef img {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.chefs-flex-chef .chef-name {
+  @include font($titles-color, 16px, "Open sans", 600);
+}
+
+.chefs-flex-chef .chef-description {
+  @include font($text-color, 14px, "Open sans", 400);
+}

@@ -1,0 +1,47 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-size: cover;
+  background-image: url(../images/slide-1.jpg);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+    gap: 10px;
+    text-align: center;
+
+    span {
+      text-transform: uppercase;
+      @include font($main-color, 32px, "Poppins", 620px);
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      @include font($white-color, 45px, "Poppins", 620px);
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(42px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+    p {
+      @include font($white-color, 18px, "Poppins", 400px);
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+  }
+  

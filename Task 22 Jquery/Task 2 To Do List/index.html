@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background-color: #222;
+    color: white;
+}
+
+.container {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: #2db7f2;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+button:hover {
+  background-color: #32acca;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background-color: #555;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li .remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+li .remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>To Do List</h2>
+        <input type="text" id="todo-input" placeholder="Enter a task">
+        <button id="add-btn">Add</button>
+        <ul id="todo-list">
+          
+        </ul>
+      </div>
+    <script src="script.js"></script>
+</body>
+</html>

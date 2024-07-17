@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>document</title>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post" id="data-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group gender-group">
+                <div class="gender">
+                    <input type="radio" id="male" name="gender" value="male" required />
+                    <label for="male">
+                        <img src="img/male.jpg" alt="Male" />
+                    </label>
+                </div>
+                <div class="gender">
+                    <input type="radio" id="female" name="gender" value="female" required />
+                    <label for="female">
+                        <img src="img/female.jpg" alt="Female" />
+                    </label>
+                </div>
+            </div>
+
+            <input type="color" id="Color" name="Color" />
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
