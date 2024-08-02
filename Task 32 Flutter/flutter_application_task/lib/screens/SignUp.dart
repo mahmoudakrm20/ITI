@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:hive/hive.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -10,6 +10,10 @@ class SignUp extends StatefulWidget {
 
 class SignUpState extends State<SignUp> {
   bool _termsAccepted = false;
+  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,30 +48,42 @@ class SignUpState extends State<SignUp> {
             ),
             SizedBox(height: 20),
             TextFormField(
-                decoration: InputDecoration(
-                    labelText: "User Name",
-                    suffixIcon: Icon(Icons.check_circle),
-                    border: OutlineInputBorder())),
+              controller: _usernameController,
+              decoration: InputDecoration(
+                labelText: "User Name",
+                suffixIcon: Icon(Icons.check_circle),
+                border: OutlineInputBorder(),
+              ),
+            ),
             SizedBox(height: 20),
             TextFormField(
-                decoration: InputDecoration(
-                    labelText: "Email",
-                    suffixIcon: Icon(Icons.check_circle),
-                    border: OutlineInputBorder())),
+              controller: _emailController,
+              decoration: InputDecoration(
+                labelText: "Email",
+                suffixIcon: Icon(Icons.check_circle),
+                border: OutlineInputBorder(),
+              ),
+            ),
             SizedBox(height: 20),
             TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    labelText: "Password",
-                    suffixIcon: Icon(Icons.password),
-                    border: OutlineInputBorder())),
+              controller: _passwordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Password",
+                suffixIcon: Icon(Icons.password),
+                border: OutlineInputBorder(),
+              ),
+            ),
             SizedBox(height: 20),
             TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    labelText: "Confirm Password",
-                    suffixIcon: Icon(Icons.password),
-                    border: OutlineInputBorder())),
+              controller: _confirmPasswordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Confirm Password",
+                suffixIcon: Icon(Icons.password),
+                border: OutlineInputBorder(),
+              ),
+            ),
             SizedBox(height: 20),
             Row(
               children: [
@@ -91,7 +107,7 @@ class SignUpState extends State<SignUp> {
             ElevatedButton(
               onPressed: _termsAccepted
                   ? () {
-                      // Add your sign up logic here
+                      _signUp();
                     }
                   : null,
               child: Text("Sign Up"),
@@ -107,5 +123,33 @@ class SignUpState extends State<SignUp> {
         ),
       ),
     );
+  }
+
+  void _signUp() {
+    if (_passwordController.text != _confirmPasswordController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Passwords do not match')),
+      );
+      return;
+    }
+
+    var box = Hive.box('userBox');
+    box.put('username', _usernameController.text);
+    box.put('email', _emailController.text);
+    box.put('password', _passwordController.text);
+
+    print('Stored Email: ${_emailController.text}');
+    print('Stored Password: ${_passwordController.text}');
+
+    Navigator.pushReplacementNamed(context, '/welcome');
+  }
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
   }
 }

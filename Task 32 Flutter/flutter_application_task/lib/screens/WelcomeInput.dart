@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'Products.dart';
 
-class WelcomeInput extends StatelessWidget {
+class WelcomeInput extends StatefulWidget {
+  const WelcomeInput({super.key});
+
+  @override
+  WelcomeInputState createState() => WelcomeInputState();
+}
+
+class WelcomeInputState extends State<WelcomeInput> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(40.0),
+        padding: EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -14,101 +26,92 @@ class WelcomeInput extends StatelessWidget {
               width: 140,
             ),
             SizedBox(height: 70),
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Text(
-                'Welcome!',
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Login",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                )
+              ],
+            ),
             SizedBox(height: 10),
-            Row(children: [
-              Text(
-                'Please login or sign up to continue our app',
-                textAlign: TextAlign.start,
-              ),
-            ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Sign in to your account",
+                )
+              ],
+            ),
             SizedBox(height: 20),
             TextFormField(
+              controller: _emailController,
               decoration: InputDecoration(
-                labelText: 'Email',
+                labelText: "Email",
                 suffixIcon: Icon(Icons.check_circle),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
+                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 20),
             TextFormField(
+              controller: _passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: "Password",
                 suffixIcon: Icon(Icons.password),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
+                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Login',
-                style: TextStyle(color: Colors.white),
-              ),
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                backgroundColor: Color.fromARGB(255, 0, 0, 0),
-              ),
-            ),
-            SizedBox(height: 10),
-            Text('or'),
-            SizedBox(height: 10),
-            OutlinedButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.facebook, color: Colors.blue),
-              label: Text('Continue with Facebook'),
+              onPressed: _login,
+              child: Text("Login"),
               style: OutlinedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            OutlinedButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.g_mobiledata, color: Colors.red),
-              label: Text('Continue with Google'),
-              style: OutlinedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            OutlinedButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.apple, color: Colors.black),
-              label: Text('Continue with Apple'),
-              style: OutlinedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 248, 171, 171),
                 minimumSize: Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
               ),
             ),
-            SizedBox(height: 50),
           ],
         ),
       ),
     );
+  }
+
+  void _login() {
+    var box = Hive.box('userBox');
+    String? email = box.get('email');
+    String? password = box.get('password');
+
+    print('Stored Email: $email');
+    print('Stored Password: $password');
+    print('Entered Email: ${_emailController.text}');
+    print('Entered Password: ${_passwordController.text}');
+
+    if (_emailController.text == email &&
+        _passwordController.text == password) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Login successful')),
+      );
+      // Navigate to the Products screen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Products()),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Invalid email or password')),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 }
