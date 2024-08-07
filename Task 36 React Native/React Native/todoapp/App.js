@@ -7,7 +7,7 @@ import {
   View,
   FlatList,
 } from "react-native";
-import { Divider } from "react-native-elements";
+import "@expo/metro-runtime";
 
 export default function App() {
   const data = [
