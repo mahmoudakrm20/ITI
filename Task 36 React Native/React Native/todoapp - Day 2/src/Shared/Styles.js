@@ -50,5 +50,11 @@ export const styles = StyleSheet.create({
     backgroundColor: "#aeaeae",
     marginVertical: 15,
   },
-  todoContainer: {},
+  todoContainer: {
+    marginTop: 10,
+    alignItems: "center",
+    width: "100%",
+    flex: 1,
+  },
+  scrollable: { width: "90%" },
 });

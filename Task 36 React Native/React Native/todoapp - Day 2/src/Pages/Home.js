@@ -6,6 +6,7 @@ import {
   View,
   FlatList,
   Alert,
+  ScrollView,
 } from "react-native";
 import { styles } from "../Shared/Styles";
 import { useState, useEffect } from "react";
@@ -97,13 +98,15 @@ const Home = () => {
           <Text>Done</Text>
         </TouchableOpacity>
       </View>
-      <View style={{ marginTop: 10, width: "90%" }}>
-        <Todos
-          todos={todos}
-          onDelete={deleteTask}
-          onComplete={completedTasks}
-        />
-      </View>
+      <ScrollView style={styles.scrollable}>
+        <View style={styles.todoContainer}>
+          <Todos
+            todos={todos}
+            onDelete={deleteTask}
+            onComplete={completedTasks}
+          />
+        </View>
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
